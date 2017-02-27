@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans" ng-app="ionicApp">
+    <head>
+        <title>IONIC</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <link href="../bower_components/ionic/release/css/ionic.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <ion-side-menus ng-controller="ionicCtrl">
+            <ion-side-menu-content>
+                <ion-header-bar class="bar-dark">
+                    <h1 class="title">Ionic</h1>
+                </ion-header-bar>
+
+                <ion-content>
+                    <ion-list show-delete="showldShowDelete" show-reorder="showldShowReorder">
+                        <ion-item ng-repeat="task in tasks">
+                            <ion-delete-button class="ion-minus-circled" ng-click="delect(this)"></ion-delete-button>
+                            <ion-reorder-button class="ion-navicon" on-reorder="moveItem(task, $fromIndex, $toInder)"></ion-reorder-button>
+                            <a href="javascript:;">{{task.title}}</a>
+                            <ion-option-button class="button-positive">分享</ion-option-button>
+                            <ion-option-button class="button-assertive">编辑</ion-option-button>
+                        </ion-item>
+
+                        <ion-item menu-toggle="left">打开菜单</ion-item>
+                    </ion-list>
+
+
+                    <ion-toggle ng-model="showldShowDelete">显示/隐藏删除按钮</ion-toggle>
+                    <ion-toggle ng-model="showldShowReorder">显示/隐藏排序按钮</ion-toggle>
+                </ion-content>
+            </ion-side-menu-content>
+
+            <ion-side-menu side="left" width="100">
+                <ion-header-bar class="bar-dark">
+                    <h1 class="title">Menu...</h1>
+                </ion-header-bar>
+            </ion-side-menu>
+        </ion-side-menus>
+
+        <script src="../bower_components/ionic/release/js/ionic.bundle.js"></script>
+        <script>
+            (function() {
+                'use strict';
+
+                var app = angular.module('ionicApp', ['ionic']);
+
+                app.controller('ionicCtrl', function($scope) {
+                    $scope.tasks = [
+                        {title: '列表A'},
+                        {title: '列表B'},
+                        {title: '列表C'},
+                        {title: '列表D'}
+                    ];
+
+                    $scope.delect = function(content) {
+                        console.log(content);
+                        // content.parentNode.removeChild(content);
+                    };
+
+                    $scope.moveItem = function(task, fromIndex, toIndex) {
+                        $scope.tasks.splice(fromIndex, 1);
+                        $scope.tasks.splice(toIndex, 0, task);
+                    };
+                });
+
+            }());
+        </script>
+    </body>
+</html>

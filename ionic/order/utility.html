@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans" ng-app="utilityApp">
+<head>
+    <meta charset="utf-8">
+    <title>Utility Demo.</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link rel="stylesheet" href="../bower_components/ionic/release/css/ionic.min.css">
+</head>
+<body ng-controller="utilityCtrl">
+    
+    
+
+    <script src="../bower_components/ionic/release/js/ionic.bundle.js"></script>
+    <script>
+        (function() {
+            'use strict';
+
+            var app = angular.module('utilityApp', ['ionic']);
+
+            app.controller('utilityCtrl', function($scope) {
+
+            });
+
+            ionic.Platform.ready(function() {
+                // console.log('加载完毕.');
+            });
+
+            console.log('ionic.Platform.device(): ', ionic.Platform.device());
+            console.log('ionic.Platform.isWebView(): ', ionic.Platform.isWebView());
+            console.log('ionic.Platform.isIPad(): ', ionic.Platform.isIPad());
+            console.log('ionic.Platform.isIOS(): ', ionic.Platform.isIOS());
+            console.log('ionic.Platform.isAndroid(): ', ionic.Platform.isAndroid());
+            console.log('ionic.Platform.isWindowsPhone(): ', ionic.Platform.isWindowsPhone());
+            console.log('ionic.Platform.version(): ', ionic.Platform.version());
+            console.log('ionic.Platform.exitApp(): ', ionic.Platform.exitApp());
+            console.log('ionic.Platform.isReady: ', ionic.Platform.isReady);
+            console.log('ionic.Platform.isFullScreen: ', ionic.Platform.isFullScreen);
+            console.log('ionic.Platform.platforms: ', ionic.Platform.platforms);
+            console.log('ionic.Platform.grade: ', ionic.Platform.grade);
+        }());
+    </script>
+</body>
+</html>

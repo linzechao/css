@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans" ng-app="formApp">
+<head>
+    <meta charset="utf-8">
+    <title>Form Style.</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link href="../bower_components/ionic/release/css/ionic.min.css" rel="stylesheet">
+</head>
+<body>
+    <ion-header-bar class="item-input-inset">
+        <label class="item-input-wrapper">
+            <i class="icon ion-ios-search placeholder-icon"></i>
+            <input type="search" placeholder="Search">
+        </label>
+
+        <button class="button button-clear">Cancel</button>
+    </ion-header-bar>
+
+    <ion-content>
+        <div class="list">
+            <label class="item item-input item-select">
+                <span class="input-label">Lightsaber</span>
+                <select>
+                    <option value="A">A</option>
+                    <option value="B" selected>B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="list">
+            <div class="item range range-positive">
+                <i class="icon ion-ios-sunny-outline"></i>
+                <input type="range" name="volume" min="0" max="100" value="44">
+                <i class="icon ion-ios-sunny"></i>
+            </div>
+        </div>
+
+        <ion-list>
+            <ion-radio ng-model="choice" ng-value="A">Choose A</ion-radio>
+            <ion-radio ng-model="choice" ng-value="B">Choose B</ion-radio>
+        </ion-list>
+
+        <ul class="list">
+            <li class="item item-toggle">
+                HTML5
+                <label class="toggle toggle-assertive">
+                    <input type="checkbox">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li> 
+        </ul>
+
+        <ion-list>
+            <ion-checkbox ng-model="filter.red">Red</ion-checkbox>
+            <ion-checkbox ng-model="filter.green">Green</ion-checkbox>
+            <ion-checkbox ng-model="filter.blue">Blue</ion-checkbox>
+        </ion-list>
+
+        <div class="list">
+            <label class="item item-input">
+                <input type="text" placeholder="First Name">
+            </label>
+
+            <label class="item item-input">
+                <input type="text" placeholder="Last Name">
+            </label>
+
+            <label class="item item-input">
+                <textarea placeholder="Comments"></textarea>
+            </label>
+        </div>
+
+        <div class="list">
+            <label class="item item-input">
+                <span class="input-label">UserName</span>
+                <input type="text">
+            </label>
+
+            <label class="item item-input">
+                <span class="input-label">Password</span>
+                <input type="password">
+            </label>
+        </div>
+
+        <div class="list">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">First Name</span>
+                <input type="text" placeholder="John">
+            </label>
+
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Last Name</span>
+                <input type="text" placeholder="Suhr">
+            </label>
+
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Email</span>
+                <input type="text" placeholder="johr@suhr.com">
+            </label>
+        </div>
+
+        <div class="list">
+            <label class="item item-input item-floating-label">
+                <span class="input-label">First Name</span>
+                <input type="text" placeholder="John">
+            </label>
+
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Last Name</span>
+                <input type="text" placeholder="Suhr">
+            </label>
+
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Email</span>
+                <input type="text" placeholder="johr@suhr.com">
+            </label>
+        </div>
+
+        <div class="list list-inset">
+            <label class="item item-input">
+                <input type="text" placeholder="First Name">
+            </label>
+
+            <label class="item item-input">
+                <input type="text" placeholder="Last Name">
+            </label>
+        </div>
+
+        <div class="list">
+            <div class="item item-input-inset">
+                <label class="item-input-wrapper">
+                    <input type="text" placeholder="Email">
+                </label>
+                <button class="button button-small">Submit</button>
+            </div>
+        </div>
+
+        <div class="list list-inset">
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" placeholder="Search">
+            </label>
+        </div>
+    </ion-content>
+
+    <script src="../bower_components/ionic/release/js/ionic.bundle.js"></script>
+    <script>
+        (function() {
+            'use strict';
+            angular.module('formApp', ['ionic']);
+        }());
+    </script>
+</body>
+</html>

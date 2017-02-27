@@ -1,0 +1,194 @@
+.noprint, .no-print {
+  display: none;
+}
+
+address.print-only, article.print-only, aside.print-only, blockquote.print-only, center.print-only, dir.print-only, div.print-only, dd.print-only, details.print-only, dl.print-only, dt.print-only, fieldset.print-only, figcaption.print-only, figure.print-only, form.print-only, footer.print-only, frameset.print-only, h1.print-only, h2.print-only, h3.print-only, h4.print-only, h5.print-only, h6.print-only, hr.print-only, header.print-only, hgroup.print-only, isindex.print-only, main.print-only, menu.print-only, nav.print-only, noframes.print-only, noscript.print-only, ol.print-only, p.print-only, pre.print-only, section.print-only, summary.print-only, ul.print-only {
+  display: block;
+}
+
+a.print-only, abbr.print-only, acronym.print-only, audio.print-only, b.print-only, basefont.print-only, bdo.print-only, big.print-only, br.print-only, canvas.print-only, cite.print-only, code.print-only, command.print-only, datalist.print-only, dfn.print-only, em.print-only, embed.print-only, font.print-only, i.print-only, img.print-only, input.print-only, keygen.print-only, kbd.print-only, label.print-only, mark.print-only, meter.print-only, output.print-only, progress.print-only, q.print-only, rp.print-only, rt.print-only, ruby.print-only, s.print-only, samp.print-only, select.print-only, small.print-only, span.print-only, strike.print-only, strong.print-only, sub.print-only, sup.print-only, textarea.print-only, time.print-only, tt.print-only, u.print-only, var.print-only, video.print-only, wbr.print-only {
+  display: inline;
+}
+
+table {
+  border: 2px solid #7a98c6;
+}
+table thead th {
+  border-bottom: 2px solid #7a98c6;
+}
+table tfoot th, table tfoot td {
+  border-top: 2px solid #7a98c6;
+}
+table th:first-child {
+  border-right: 2px solid #7a98c6;
+}
+table th, table td {
+  border-right: 1px solid #233551;
+  border-bottom: 1px solid #233551;
+  border-left-width: 0;
+  border-top-width: 0;
+}
+table th:last-child, table td:last-child {
+  border-right-width: 0;
+}
+table th.last, table td.last {
+  border-right-width: 0;
+}
+table tbody tr:last-child th, table tbody tr:last-child td, table tfoot tr:last-child th, table tfoot tr:last-child td {
+  border-bottom-width: 0;
+}
+table tbody tr.last th, table tbody tr.last td, table tfoot tr.last th, table tfoot tr.last td {
+  border-bottom-width: 0;
+}
+table th {
+  text-align: center;
+  font-weight: bold;
+}
+table td,
+table th {
+  padding: 2px;
+}
+table td.numeric,
+table th.numeric {
+  text-align: right;
+}
+table th {
+  background-color: white;
+}
+table th.even, table th:nth-child(2n) {
+  background-color: #dddddd;
+}
+table tr.odd td, table tr:nth-child(2n+1) td {
+  background-color: #98c67a;
+}
+table tr.odd td.even, table tr.odd td:nth-child(2n), table tr:nth-child(2n+1) td.even, table tr:nth-child(2n+1) td:nth-child(2n) {
+  background-color: #76a458;
+}
+table tr.even td {
+  background-color: #7a98c6;
+}
+table tr.even td.even, table tr.even td:nth-child(2n) {
+  background-color: #5876a4;
+}
+table tfoot th, table tfoot td {
+  background-color: white;
+}
+table tfoot th.even, table tfoot th:nth-child(2n), table tfoot td.even, table tfoot td:nth-child(2n) {
+  background-color: #dddddd;
+}
+
+.overflow {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+.table {
+  *zoom: 1;
+}
+.table:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.both {
+  *zoom: 1;
+}
+.both:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.pull-left {
+  float: left;
+}
+
+.need-has-layout {
+  *zoom: 1;
+}
+
+.test-min {
+  min-width: 10px;
+  min-height: 10px;
+}
+
+.tag-cloud {
+  width: 200px;
+  font-size: 24px;
+  line-height: 28.8px;
+}
+.tag-cloud .xxs, .tag-cloud .xs, .tag-cloud .s, .tag-cloud .l, .tag-cloud .xl, .tag-cloud .xxl {
+  line-height: 28.8px;
+}
+.tag-cloud .xxs {
+  font-size: 12px;
+}
+.tag-cloud .xs {
+  font-size: 16px;
+}
+.tag-cloud .s {
+  font-size: 18px;
+}
+.tag-cloud .l {
+  font-size: 32px;
+}
+.tag-cloud .xl {
+  font-size: 36px;
+}
+.tag-cloud .xxl {
+  font-size: 48px;
+}
+
+.icon-sprite, .icon-dianhua, .icon-kefu, .icon-liuyan, .icon-ziliao, .main-dianhua {
+  background-image: url('../images/icon-s52117bac00.png');
+  background-repeat: no-repeat;
+}
+
+.icon-dianhua {
+  background-position: 0 0;
+  height: 100px;
+  width: 100px;
+}
+.icon-dianhua:hover, .icon-dianhua.dianhua-hover {
+  background-position: 0 -100px;
+}
+
+.icon-kefu {
+  background-position: 0 -200px;
+  height: 100px;
+  width: 100px;
+}
+.icon-kefu:hover, .icon-kefu.kefu-hover {
+  background-position: 0 -300px;
+}
+
+.icon-liuyan {
+  background-position: 0 -400px;
+  height: 100px;
+  width: 100px;
+}
+.icon-liuyan:hover, .icon-liuyan.liuyan-hover {
+  background-position: 0 -500px;
+}
+
+.icon-ziliao {
+  background-position: 0 -600px;
+  height: 89px;
+  width: 100px;
+}
+.icon-ziliao:hover, .icon-ziliao.ziliao-hover {
+  background-position: 0 -689px;
+}
+
+.main-dianhua {
+  background-position: 0 0;
+  height: 100px;
+  width: 100px;
+}
+.main-dianhua:hover, .main-dianhua.dianhua-hover {
+  background-position: 0 -100px;
+}

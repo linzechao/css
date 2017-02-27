@@ -1,0 +1,97 @@
+// @import "compass/utilities";
+
+@import "compass/utilities/color";
+// ...
+
+@import "compass/utilities/print";
+// 打印样式调用
+@include print-utilities();
+
+// 非打印样式调用
+// @include print-utilities(screen);
+
+@import "compass/utilities/tables";
+
+$browser-minimun-versions: ("ie": "6");
+
+table {
+    $table-color: #7a98c6;
+    // border-collapse: collapse;
+
+    // 外边框
+    @include outer-table-borders(2px, $table-color);
+    // 内边框
+    @include inner-table-borders(1px, darken($table-color, 40%));
+
+    // 内边距
+    @include table-scaffolding();
+
+
+    @include alternating-rows-and-columns($table-color, adjust-hue($table-color, -120deg), #222);
+}
+
+@import "compass/utilities/general";
+
+// 缺点就是子元素不能跑出父框
+.overflow {
+    @include clearfix();
+}
+
+// 不支持display: table;
+.table {
+    @include pie-clearfix();
+}
+
+// 折中最适解决方案
+.both {
+    @include legacy-pie-clearfix();
+}
+
+.pull-left {
+    @include float(left);
+}
+
+.need-has-layout {
+    @include has-layout();
+}
+
+.underscore-hack-display {
+    @include underscore-hack(display, block, inline);
+}
+
+.test-min {
+    @include min-width(10px);
+    @include min-height(10px);
+}
+
+.tag-cloud {
+    width: 200px;
+    @include tag-cloud(24px);
+}
+
+// 雪碧图
+@import "compass/utilities/sprites";
+// 引入图片
+@import "icon/*.png";
+
+
+// 配置图标高宽上去
+$icon-sprite-dimensions: true;
+
+// 去除hover,active等图片命名中的中划线
+// $disable-magic-sprite-selectors: true;
+
+// 横向布局图片
+// $icon-layout: horizontal;
+// 节省最大空间布局
+$icon-layout: smart;
+
+// 生成所有单个图标的class
+@include all-icon-sprites();
+
+// 单个命名
+.main-dianhua {
+    @include icon-sprite('dianhua');
+}
+
+

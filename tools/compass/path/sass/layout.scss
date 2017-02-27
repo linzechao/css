@@ -1,0 +1,29 @@
+@import "compass/layout";
+// 布局样式
+
+/**
+ * compass/layout包含以下3个模块
+ * http://compass-style.org/reference/compass/layout/
+ * 1、compass/layout/grid-backgrount
+ * 2、compass/layout/sticky-footer
+ * 3、compass/layout/stretching
+ */
+
+// 可配置变量，覆盖默认样式
+$grid-background-column-color: rgba(0, 255, 0, .4);
+
+body {margin: 0;}
+
+.stretch-full {
+    // top, right, bottom, left
+    // @include stretch(5px, 5px, 5px, 5px);
+    // 使用$offset前缀，顺序可以乱
+    @include stretch($offset-top: 4px, $offset-bottom: 6px, $offset-left: 8px, $offset-right: 10px);
+}
+
+@include sticky-footer(24px);
+
+#root {
+    @include grid-background();    
+}
+

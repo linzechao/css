@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans" ng-app="modalApp">
+<head>
+    <meta charset="utf-8">
+    <title>Modal Demo.</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link rel="stylesheet" href="../bower_components/ionic/release/css/ionic.min.css">
+</head>
+<body ng-controller="modalCtrl">
+    <ion-view>
+    </ion-view>
+
+    <script src="../bower_components/ionic/release/js/ionic.bundle.js"></script>
+
+    <!-- 模板模型 -->
+    <script id="m.html" type="text/ng-template">
+        <div class="modal">
+            <ion-header-bar>
+                <h1 class="title">我的模型标题</h1>
+            </ion-header-bar>
+
+            <ion-content>
+                Hello!
+            </ion-content>
+        </div>
+    </script>
+
+    <script>
+        (function() {
+            'use strict';
+
+            var app = angular.module('modalApp', ['ionic']);
+
+            app.controller('modalCtrl', function($scope, $ionicModal) {
+                $ionicModal.fromTemplateUrl('m.html', {
+                    scope: $scope,
+                    animation: 'slide-in-up'
+
+                }).then(function(modal) {
+                    $scope.modal = modal;
+                });
+
+                $scope.openModal = function() {
+                    $scope.modal.show();
+                };
+                
+                $scope.closeModal = function() {
+                    $scope.modal.hide();
+                };
+
+                $scope.$on('$destroy', function() {
+                    $scope.modal.remove();
+                });
+
+                $scope.$on('modal.hide', function() {
+                    console.log('模型隐藏...');
+                });
+
+                $scope.$on('modal.removed', function() {
+                    console.log('模型销毁...');
+                });
+            });
+        }());
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+// 指令
+
+// @if判断
+@mixin blockOrHidden($boolean: true) {
+    // 提示信息
+    @debug "$boolean is #{boolean}";
+
+    @if $boolean {
+        display: block;
+    } @else {
+        display: none;
+    }
+}
+
+.show {
+    @include blockOrHidden;
+}
+
+.hide {
+    @include blockOrHidden(false);
+}
+
+// @for循环
+// 结束2个关键字
+// through: 不包括末值，相当于“<=”
+// to: 包括结束末值，相当于“<”
+
+@for $i from 1 through 4 {
+    .for-through-#{$i} {width: 10px * $i;}
+}
+
+%grid {
+    float: left;
+    margin-left: (20px / 2);
+    margin-right: (20px / 2);
+}
+
+// 干货
+@for $i from 1 to 13 {
+    .for-to-#{$i} {
+        @extend %grid;
+
+        width: 10px * $i + 20px * ($i - 1);
+    }
+}
+
+// @while循环
+$types: 4;
+@while $types > 0 {
+    .while-#{$types} {
+        width: 10px + $types;
+    }
+
+    $types: $types - 1;
+}
+
+// @each循环
+$list: admin user as root;
+
+@each $var in $list {
+    .each-#{$var} {
+        background-image: url("../images/#{$var}.png") no-repeat;
+    }
+}
+
+

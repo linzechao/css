@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <title>Border</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei";
+            font-size: 36px;
+            background-color: #f8f8f8;
+        }
+
+        div {
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        #colors {
+            /* border-color: 默认为color; */
+            border: 6px solid;
+
+            -moz-border-bottom-colors: #f00 #0f0 #00f #ff0 #f0f #0ff;
+            -moz-border-top-colors: #f00 #0f0 #00f #ff0 #f0f #0ff;
+            -moz-border-left-colors: #f00 #0f0 #00f #ff0 #f0f #0ff;
+            -moz-border-right-colors: #f00 #0f0 #00f #ff0 #f0f #0ff;
+
+            color: #8f8f8f;
+        }
+
+        #image {
+            -webkit-border-image: url("border-image.png") 12/12 stretch stretch;
+            -o-border-image: url("border-image.png") 12/12 stretch stretch;
+            /*border-image: url("border-image.png") 12/12 stretch stretch;*/
+            color: #fff;
+        }
+
+        #radius {
+            border: 10px solid;
+
+            -webkit-border-radius: 40px;
+            -moz-border-radius: 40px;
+            -ms-border-radius: 40px;
+            -o-border-radius: 40px;
+            border-radius: 40px;
+        }
+
+        #box-shadow {
+            -webkit-box-shadow: 1px 2px 4px #000;
+            box-shadow: 1px 2px 4px #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="colors">多边框只支持火狐</div>
+
+    <div id="image">边框背景不支持谷歌、IE</div>
+
+    <div id="radius">边框圆角</div>
+
+    <div id="box-shadow">边框阴影</div>
+</body>
+</html>

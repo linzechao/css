@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <title>盒子布局、垂直居中</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <style>
+        body {
+            height: 480px;
+            margin: 0;
+            /* 垂直居中 */
+            display: -webkit-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        ul {
+            width: 100%;
+            padding: 10px 0;
+            margin: 0;
+            display: -webkit-flex;
+            background-color: #888;
+            color: #fff;
+            text-align: center;
+            list-style: none;
+        }
+
+        /* 太爽了 */
+        li {
+            flex: auto;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>德玛西亚</li>
+        <li>不关我事</li>
+        <li>放学别走</li>
+    </ul>
+</body>
+</html>

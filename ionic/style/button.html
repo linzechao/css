@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans" ng-app="moduleApp">
+    <head>
+        <title>Button Style.</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <link href="../bower_components/ionic/release/css/ionic.min.css" rel="stylesheet">
+        <style>
+            body {background-color: #888;}
+        </style>
+    </head>
+    <body ng-controller="moduleCtrl">
+        <ion-content>
+            <button class="button button-positive" type="button">button-positive</button>
+            <!-- <button class="button button-balanced" type="button">button-balanced</button>
+            <button class="button button-assertive" type="button">button-assertive</button>
+            <button class="button button-royal" type="button">button-royal</button>
+            <button class="button button-calm" type="button">button-calm</button>
+            <button class="button button-dark" type="button">button-dark</button>
+            <button class="button button-energized" type="button">button-energized</button>
+            <button class="button button-stable" type="button">button-stable</button>
+            <button class="button button-light" type="button">button-light</button> -->
+
+            <button class="button button-block button-balanced">Button-Block</button>
+            <button class="button button-full button-assertive">Button-Full</button>
+            <button class="button button-small button-calm">Button-Small</button>
+            <button class="button button-large button-royal">Button-large</button>
+            <button class="button button-outline button-energized">Button-Outline</button>
+    
+            <button class="button button-clear button-dark">Button-Clear</button>
+
+            <button class="button">
+                <i class="icon ion-loading-c"></i> Loading...
+            </button>
+
+            <button class="button icon-left ion-home">Home</button>
+
+            <button class="button icon-left ion-star button-positive">Favorites</button>
+
+            <button class="button icon-right ion-chevron-right button-balanced">Remove</button>
+
+            <button class="button icon ion-gear-a button-assertive"></button>
+
+            <a href="javascript:;" class="button button-icon icon ion-settings"></a>
+
+            <a class="button button-outline icon-right ion-navicon button-balanced">Reorder</a>
+
+            <div class="button-bar">
+                <a href="javascript:;" class="button">First</a>
+                <a href="javascript:;" class="button">Second</a>
+                <a href="javascript:;" class="button">Third</a>
+            </div>
+        </ion-content>
+
+
+        <script src="../bower_components/ionic/release/js/ionic.bundle.js"></script>
+        <script>
+            (function() {
+                'use strict';
+
+                var app = angular.module('moduleApp', ['ionic']);
+
+                app.controller('moduleCtrl', function($scope) {
+                    
+                });
+            }());
+        </script>
+    </body>
+</html>

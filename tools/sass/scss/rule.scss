@@ -1,0 +1,40 @@
+// 导入其他scss文件
+// 其他文件需要带上后缀名
+
+// 以下情况按css规则来解析
+// 如果文件的扩展名是 .css。
+// 如果文件名以 http:// 开头。
+// 如果文件名是 url()。
+// 如果@import包含了任何媒体查询（media queries）。
+// @import "basic";
+@import "../css/basic.css";
+
+.main {
+    width: 300px;
+
+    a {
+        color: #FFFFFF;
+    }
+
+    @media screen and (orientation: landscape) {
+        width: 500px;
+    }
+}
+
+#main {
+    header {
+        nav {
+            color: #000;
+
+            // 跳至根节点
+            @at-root h1 {
+                color: #fff;
+                background-color: #000;
+            }
+        }
+    }
+}
+
+@debug 10em + 2em;
+@warn "Ready Go.";
+// @error "DIE";

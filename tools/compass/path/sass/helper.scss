@@ -1,0 +1,18 @@
+// Helpers模块不需要导入
+
+body {
+    // 自动把图片编辑成base64
+    // base64耗性能，占内存
+    // background-image: inline-image("1.jpg");
+    // 每次都要修改后缀
+    // background-image: url("../images/2.jpg?t=20160411");
+    // background-image: image-url("3.jpg");
+    // stylesheet-url
+    // fonts-url
+
+    @include font-face("helper",
+        font-files("helper.eot", "helper.svg", "helper.ttf", "helper.woff"));
+
+    background-repeat: no-repeat;
+    background-size: 100%;
+}

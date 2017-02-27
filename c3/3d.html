@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Time</title>
+    <style>
+        * {margin:0;padding:0;}
+        .time-box {position:absolute;top:30%;left:30%;width:142px;height:142px;}
+        .time-box img {position:relative;top:0px;left:0px;width:100%;height:100%;}
+        .time-box img.minute {-webkit-animation: hourM linear .3s 9 forwards;animation: hourR linear .3s 9 forwards;}
+        .time-box img.hour {-webkit-animation: hourR linear 2.7s 1 forwards;animation: hourM linear 2.7s 1 forwards;}
+        @-webkit-keyframes hourM {0% {transform: rotate(0deg);} 100% {transform: rotate(360deg);}}
+        @keyframes hourM {0% {transform: rotate(0deg);} 100% {transform: rotate(360deg);}}
+        @-webkit-keyframes hourR {0% {transform: rotate(0deg);} 100% {transform: rotate(270deg);}}
+        @keyframes hourR {0% {transform: rotate(0deg);} 100% {transform: rotate(270deg);}}
+        canvas {position:relative;top:0px;left:0px;width:142px;height:142px;border-radius:142px;}
+    </style>
+</head>
+<body>
+
+</body>
+</html>

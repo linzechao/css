@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans" ng-app="listApp">
+<head>
+    <meta charset="utf-8">
+    <title>List Style.</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link href="../bower_components/ionic/release/css/ionic.min.css" rel="stylesheet">
+</head>
+<body>
+    <ion-content>
+        <ul class="list">
+            <li class="item item-divider">传统ul/li标签</li>
+            <li class="item">First</li>
+            <li class="item">Second</li>
+            <li class="item">Third</li>
+        </ul>
+
+        <div class="list">
+            <div class="item item-divider">混合div/a等标签</div>
+            <a class="item" href="javascript:;">Butterfinger</a>
+        </div>
+
+        <div class="list">
+            <div class="item item-divider">带有图标列表</div>
+            <a class="item item-icon-left" href="javascript:;">
+                <i class="icon ion-email"></i> Check mail
+            </a>
+
+            <a class="item item-icon-left item-icon-right" href="javascript:;">
+                <i class="icon ion-chatbubble-working"></i>
+                Call Ma
+                <i class="icon ion-ios-telephone-outline"></i>
+            </a>
+
+            <a class="item item-icon-left" href="javascript:;">
+                <i class="icon ion-mic-a"></i>
+                Record album
+                <span class="item-note">Grammy</span>
+            </a>
+
+            <a class="item item-icon-left" href="javascript:;">
+                <i class="icon ion-person-stalker"></i>
+                Friends
+                <span class="badge badge-assertive">0</span>
+            </a>
+        </div>
+
+        <div class="list">
+            <div class="item item-divider">带有按钮列表</div>
+            <div class="item item-button-right">
+                Call Ma
+                <button class="button button-positive">
+                    <i class="icon ion-ios-telephone"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="list">
+            <div class="item item-divider">带有图片列表</div>
+            <a class="item item-avatar" href="javascript:;">
+                <img src="../images/example.jpg">
+                <h2>Venkman</h2>
+                <p>Back off, man. I'm a scientist.</p>
+            </a>
+        </div>
+
+        <div class="list">
+            <div class="item item-divider">带有缩略图列表</div>
+            <a class="item item-thumbnail-right" href="javascript:;">
+                <img src="../images/example.jpg">
+                <h2>Pretty Hate Machine</h2>
+                <p>Nine Inch Nails.</p>
+            </a>
+        </div>
+
+        <div class="list list-inset">
+            <div class="item item-divider">居中列表</div>
+            <div class="item">Raiders of the Lost Ark.</div>
+        </div>
+    </ion-content>
+
+    <script src="../bower_components/ionic/release/js/ionic.bundle.js"></script>
+    <script>
+        (function() {
+            'use strict';
+
+            angular.module('listApp', ['ionic']);
+        }());
+    </script>
+</body>
+</html>

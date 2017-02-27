@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans" ng-app="frameApp">
+<head>
+    <meta charset="utf-8">
+    <title>Frame</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link rel="stylesheet" href="../bower_components/ionic/release/css/ionic.min.css">
+    <style>
+        #main p {text-indent: 2em;}
+    </style>
+</head>
+<body ng-controller="frameCtrl">
+    <ion-header-bar class="bar-positive">
+        <div class="buttons">
+            <button class="button" type="button" ng-click="doSomething()">上·左侧按钮</button>
+        </div>
+        <h1 class="title">上·标题</h1>
+        <div class="buttons">
+            <button class="button" type="button" ng-click="triggerLoadMore()">上·右侧按钮/加载更多</button>
+        </div>
+    </ion-header-bar>
+
+    <!--
+    <ion-scroll id="main" padding="10">
+        <ion-infinite-scroll on-infinite="loadMore()" distence="1%"></ion-infinite-scroll>
+
+        <p>疯子是一个狂妄的人，她炒老板鱿鱼，纹身，打耳洞，穿潮款衣服，83年的这个大姐，活出了90后的味道。我羡慕她的生活，相比她那样的潇洒，我的生活就像一个处女座的书桌，规整的让人讨厌。</p>
+
+        <p>今年再次看到疯子，是她拿结婚的请柬给我，8月份在北京办婚礼。跟她认识半年多，但是因为说话投机，所以关系还不错。上周，跟她约在公司楼下的咖啡厅见面，精致的小糖盒，还有递过来的请柬，完全幸福的样子。她说笑着她老公，满脸幸福，不会觉得意外，因为有一种，这就应该是她的生活，就是那样的一种感觉。</p>
+
+        <p>现在身体力行跟着我做，第一步：打开微信圈，第二步：点开‘我的收藏’。然后，你数数你果断收藏了多少看似励志的鸡肋，再思考一下你收藏的东西都有用吗？你有那么一丁点改变吗？你收藏的电影看了吗？你收藏的健身软件用了吗？你收藏的每月书单你按上面的顺序读了吗？那收藏的专业对口知识你背下来了吗？你收藏的单词本中的单词你反复咀嚼吃透了吗？﻿﻿</p>
+
+        <p>小O每次跟朋友喝茶聊天，唯一的一件事就是抱怨大学的语言老师对她多么不公平，据她自己介绍，她每天都学到半夜十二点，可是那个老师就是不喜欢她，所以不让她通过考试，那些成绩好的‘studyfather’们几乎都不学习，她羡慕的要死，抱怨为什么别人那么有天赋那么牛逼，朋友一开始不解，后来和她每次的聊天中，发现她们的对话每次都因为她都在忙着和同学通电话约出去玩打断，朋友就明白了﻿﻿</p>
+
+        <p>不是你忙着准备考试，也不是你忙着工作，而是你忙着肆意挥洒时光，你一边等着自家母亲未来男友伺候你一边羡慕别的女孩儿做饭好吃，你一边‘约吗约吗约吗’一遍羡慕学霸们看似轻而易举得到一句‘Congratulations！’，你一边盯着公司企划案任凭思想的野狗肥猪们万‘马’奔腾，熬到半夜合上电脑洗洗就睡一边羡慕公司新锐年轻的高管要么有天赋要么有后台﻿﻿</p>
+    </ion-scroll>
+    -->
+
+
+    <!-- 
+        overflow-scroll: 内容是否使用Ionic滚动机制
+        has-bouncing: 是否支持滚出内容边缘
+    -->
+    <ion-content id="main" padding="10" overflow-scroll="false" has-bouncing="false" on-scroll="onScroll()" on-scroll-complete="onScrollComplete()">
+
+
+        <!--
+            下拉刷新ion-refresher
+            存于ion-content、ion-scroll标签中
+        -->
+        <ion-refresher pulling-text="下拉刷新" refreshing-text="请稍等..." on-refresh="doRefresh()"></ion-refresher>
+
+        <p>疯子是一个狂妄的人，她炒老板鱿鱼，纹身，打耳洞，穿潮款衣服，83年的这个大姐，活出了90后的味道。我羡慕她的生活，相比她那样的潇洒，我的生活就像一个处女座的书桌，规整的让人讨厌。</p>
+
+        <p>今年再次看到疯子，是她拿结婚的请柬给我，8月份在北京办婚礼。跟她认识半年多，但是因为说话投机，所以关系还不错。上周，跟她约在公司楼下的咖啡厅见面，精致的小糖盒，还有递过来的请柬，完全幸福的样子。她说笑着她老公，满脸幸福，不会觉得意外，因为有一种，这就应该是她的生活，就是那样的一种感觉。</p>
+
+        <p>现在身体力行跟着我做，第一步：打开微信圈，第二步：点开‘我的收藏’。然后，你数数你果断收藏了多少看似励志的鸡肋，再思考一下你收藏的东西都有用吗？你有那么一丁点改变吗？你收藏的电影看了吗？你收藏的健身软件用了吗？你收藏的每月书单你按上面的顺序读了吗？那收藏的专业对口知识你背下来了吗？你收藏的单词本中的单词你反复咀嚼吃透了吗？﻿﻿</p>
+
+        <p>小O每次跟朋友喝茶聊天，唯一的一件事就是抱怨大学的语言老师对她多么不公平，据她自己介绍，她每天都学到半夜十二点，可是那个老师就是不喜欢她，所以不让她通过考试，那些成绩好的‘studyfather’们几乎都不学习，她羡慕的要死，抱怨为什么别人那么有天赋那么牛逼，朋友一开始不解，后来和她每次的聊天中，发现她们的对话每次都因为她都在忙着和同学通电话约出去玩打断，朋友就明白了﻿﻿</p>
+
+        <p>不是你忙着准备考试，也不是你忙着工作，而是你忙着肆意挥洒时光，你一边等着自家母亲未来男友伺候你一边羡慕别的女孩儿做饭好吃，你一边‘约吗约吗约吗’一遍羡慕学霸们看似轻而易举得到一句‘Congratulations！’，你一边盯着公司企划案任凭思想的野狗肥猪们万‘马’奔腾，熬到半夜合上电脑洗洗就睡一边羡慕公司新锐年轻的高管要么有天赋要么有后台﻿﻿</p>
+    </ion-content>
+
+
+    <ion-footer-bar class="bar-assertive" align-title="right">
+        <div class="buttons">
+            <button class="button" type="button" ng-click="scrollTop()">下·左侧按钮/滚动到顶部</button>
+        </div>
+        <h1 class="title">下·标题</h1>
+        <div class="buttons">
+            <button class="button" type="button" ng-click="scrollBottom()">下·右侧按钮/滚动到底部</button>
+        </div>
+    </ion-footer-bar>
+
+    <script src="../bower_components/ionic/release/js/ionic.bundle.js"></script>
+    <script>
+        (function() {
+            'use strict';
+
+            var app = angular.module('frameApp', ['ionic']);
+
+            // $ionicScrollDelegate
+            // 控制所有滚动视图
+            app.controller('frameCtrl', function($scope, $ionicScrollDelegate) {
+                // 单击事件
+                $scope.doSomething = function() {
+                    console.log('click a button.');
+                };
+
+                // 滚动时事件
+                $scope.onScroll = function() {
+                    // console.log('trigger on-scroll event.');
+                };
+
+                // 滚动后事件
+                $scope.onScrollComplete = function() {
+                    // console.log('trigger on-scroll-complete event.');
+                };
+
+                // 下拉刷新
+                $scope.doRefresh = function() {
+                    // alert('您触发了下拉刷新事件...');
+                    setTimeout(function() {
+                        // 去除下拉刷新控件
+                        $scope.$broadcast('scroll.refreshComplete');
+                    }, 2000);
+                };
+
+                // 加载更多
+                $scope.loadMore = function() {
+                    $scope.$broadcast('scroll.infiniteScrollComplete');
+                };
+
+                // 触发加载更多
+                $scope.triggerLoadMore = function() {
+                    $scope.loadMore();
+                };
+
+                // 滚动到顶部
+                $scope.scrollTop = function() {
+                    $ionicScrollDelegate.scrollTop(true);
+                };
+
+                // 滚动到底部
+                $scope.scrollBottom = function() {
+                    $ionicScrollDelegate.scrollBottom(true);
+                };
+            });
+        }());
+    </script>
+</body>
+</html>

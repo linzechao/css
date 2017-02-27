@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans" ng-app="cardsApp">
+<head>
+    <meta charset="utf-8">
+    <title>Cards Style.</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link href="../bower_components/ionic/release/css/ionic.min.css" rel="stylesheet">
+</head>
+<body>
+    <ion-content>
+        <div class="card">
+            <div class="item item-text-warp">This is a basic Card which contains an item that as warpping text.</div>
+        </div>
+
+        <div class="card">
+            <div class="item item-divider">I'm Header in a Card!</div>
+            <div class="item item-text-warp">This is a basic Card which contains an item that as warpping text.</div>
+            <div class="item item-divider">I'm a Footer in a Card!</div>
+        </div>
+
+        <div class="list card">
+            <a class="item item-icon-left" href="javascript:;">
+                <i class="icon ion-home"></i>
+                Enter home address
+            </a>
+
+            <a class="item item-icon-right" href="javascript:;">
+                <i class="icon ion-wifi"></i>
+                Enter wireless password
+            </a>
+
+            <a class="item item-icon-left" href="javascript:;">
+                <i class="icon ion-ios-telephone"></i>
+                Enter phone number
+            </a>
+
+            <a class="item item-icon-right" href="javascript:;">
+                <i class="icon ion-card"></i>
+                Enter card inforamtion
+            </a>
+        </div>
+
+        <div class="list card">
+            <div class="item item-avatar">
+                <img src="../images/example.jpg">
+                <h2>Pretty Hate Machine</h2>
+                <p>Nine Inch Nails</p>
+            </div>
+
+            <div class="item item-image">
+                <img src="../images/example.jpg">
+            </div>
+
+            <a class="item item-icon-left assertive" href="javascript:;">
+                <i class="icon ion-music-note"></i>
+                Start listening
+            </a>
+        </div>
+
+        <div class="list card">
+            <div class="item item-avatar">
+                <img src="../images/example.jpg">
+                <h2>Marty McFly</h2>
+                <p>November 05, 1955</p>
+            </div>
+
+            <div class="item item-body">
+                <img class="full-image" src="../images/example.jpg">
+                <p>This is a "Facebook" styled Card. The header is created from a Thumbnail List item, the content is from a card-body consisting of an image and paragraph text. The footer consists of tabs, icons aligned left, within the card-footer.</p>
+                <p>
+                    <a class="subdued" href="#">1 Like</a>
+                    <a class="subdued" href="#">5 Comments</a>
+                </p>
+            </div>
+        </div>
+    </ion-content>
+
+    <script src="../bower_components/ionic/release/js/ionic.bundle.js"></script>
+    <script>
+        (function() {
+            'use strict';
+
+            angular.module('cardsApp', ['ionic']);
+        }());
+    </script>
+</body>
+</html>

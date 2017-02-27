@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans" ng-app="sideApp">
+<head>
+    <meta charset="utf-8">
+    <title>Side Demo.</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link rel="stylesheet" href="../bower_components/ionic/release/css/ionic.min.css">
+    <style>
+        #main p {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body ng-controller="sideCtrl">
+    <ion-side-menus id="main">
+        <!-- 主内容块 -->
+        <ion-side-menu-content drag-content="false">
+            <ion-header-bar class="bar-positive">
+                <div class="buttons">
+                    <a class="button button-icon icon ion-navicon" href="javascript:;" menu-toggle="left"></a>
+                </div>
+                <h1 class="title">Ready Go~</h1>
+                <div class="buttons">
+                    <button class="button" type="button" ng-click="goRight()">go right.</button>
+                </div>
+            </ion-header-bar>
+
+            <ion-content>
+                <button class="button" type="button" ng-click="goLeft()">go left.</button>
+            </ion-content>
+        </ion-side-menu-content>
+
+        <!-- 左侧菜单 -->
+        <ion-side-menu side="left" width="200" is-enabled="true">
+            <ul>
+                <li class="item">左边菜单</li>
+                <li class="item" menu-close><a href="javascript:;">回到首页</a></li>
+            </ul>
+        </ion-side-menu>
+
+        <!-- 右侧菜单 -->
+        <ion-side-menu side="right" width="100" is-enabled="false">
+            <p>右边菜单</p>
+        </ion-side-menu>
+    </ion-side-menus>
+
+    <script src="../bower_components/ionic/release/js/ionic.bundle.js"></script>
+    <script>
+        (function() {
+            'use strict';
+
+            var app = angular.module('sideApp', ['ionic']);
+
+            app.controller('sideCtrl', function($scope, $ionicSideMenuDelegate) {
+                $scope.goLeft = function() {
+                    $ionicSideMenuDelegate.toggleLeft();
+                };
+
+                $scope.goRight = function() {
+                    $ionicSideMenuDelegate.toggleRight();
+                };
+            });
+
+        }());
+    </script>
+</body>
+</html>

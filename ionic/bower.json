@@ -1,0 +1,20 @@
+{
+  "name": "ionic",
+  "version": "0.0.1",
+  "homepage": "https://github.com/linzechao/ionic",
+  "authors": [
+    "Mr. Super <linzechao44@163.com>"
+  ],
+  "description": "ionic",
+  "main": "",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "ionic"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "ionic": "~1.2.4"
+  }
+}

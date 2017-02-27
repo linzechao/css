@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title></title>
+    <style>
+        @font-face {
+            font-family:'icon';
+            src:url('icon/fonts/icomoon.eot'); /* IE9 Compat Modes */
+            src:url('icon/fonts/icomoon.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('icon/fonts/icomoon.ttf')  format('truetype'), /* Safari, Android, iOS */
+            url('icon/fonts/icomoon.svg') format('svg'), /* Legacy iOS */
+            url('icon/fonts/icomoon.woff') format('woff'); /* Modern Browsers */
+            font-weight:normal;
+            font-style:normal;
+        }
+        * {margin:0;padding:0;}
+        .main {width:1024px;margin:0 auto;}
+        .main span {
+            font-family: 'icon';
+
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+
+            display:inline-block;
+            margin:10px;
+            width:100px;
+            height:100px;
+            font-size:60px;
+            line-height: 100px;
+            color: #00f;
+            text-align: center;
+        }
+
+        .rotate {
+            -webkit-animation:spanRotate 2s linear 2 forwards;
+        }
+
+        @-webkit-keyframes spanRotate {0% {transform: rotate(0deg);} 100% {transform: rotate(360deg);}}
+
+
+        /*去除行内元素的换行符*/
+        .main{font-size:0;}
+    </style>
+</head>
+<body>
+<div class="main">
+   <span style="color:#abcdef">&#xe600;</span>
+   <span style="color:#bcdefa">&#xe601;</span>
+   <span style="color:#cdefab">&#xe602;</span>
+   <span style="color:#defabc">&#xe603;</span>
+   <span style="color:#cabdef">&#xe604;</span>
+   <span style="color:#cdabef">&#xe605;</span>
+   <span style="color:#cdeabf">&#xe606;</span>
+   <span style="color:#dabcef">&#xe607;</span>
+   <span style="color:#deabcf">&#xe608;</span>
+   <span style="color:#eabcdf">&#xe609;</span>
+   <span style="color:#efabcd">&#xe60a;</span>
+   <span style="color:#adebcf">&#xe60b;</span>
+   <span style="color:#adefbc">&#xe60c;</span>
+   <span style="color:#acdbef">&#xe60d;</span>
+   <span style="color:#efabcd">&#xe60e;</span>
+   <span style="color:#abecdf" class="rotate">&#xe60f;</span>
+   <span style="color:#efcabd" class="rotate">&#xe610;</span>
+   <span style="color:#ebcfad" class="rotate">&#xe611;</span>
+   <span style="color:#ecdfab" class="rotate">&#xe612;</span>
+   <span style="color:#efcdab">&#xe613;</span>
+   <span style="color:#efabcd">&#xe614;</span>
+   <span style="color:#ebcdfa">&#xe615;</span>
+   <span style="color:#efbcda">&#xe616;</span>
+   <span style="color:#ebcdfa">&#xe617;</span>
+</div>
+</body>
+</html>

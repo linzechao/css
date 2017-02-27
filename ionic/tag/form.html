@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans" ng-app="formApp">
+<head>
+    <meta charset="utf-8">
+    <title>Form Demo.</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link rel="stylesheet" href="../bower_components/ionic/release/css/ionic.min.css">
+</head>
+<body ng-controller="formCtrl">
+    <ion-content>
+        <h2 class="title">开关</h2>
+        <div class="list">
+            <ion-toggle toggle-class="toggle-calm">Airplane Mode</ion-toggle>
+        </div>
+
+        <h2 class="title">单选框</h2>
+        <div class="list">
+            <ion-radio ng-model="choice" ng-value="A">Choose A</ion-radio>
+            <ion-radio ng-model="choice" ng-value="B">Choose B</ion-radio>
+            <ion-radio ng-model="choice" ng-value="C">Choose C</ion-radio>
+        </div>
+
+        <h2 class="title">复选框</h2>
+        <div class="list">
+            <ion-checkbox ng-repeat="item in items" ng-model="item.checked" checked="item.checked">{{item.text}}</ion-checkbox>
+        </div>
+
+        <pre ng-bind="items | json"></pre>
+    </ion-content>
+    
+    <script src="../bower_components/ionic/release/js/ionic.bundle.js"></script>
+    <script>
+        (function() {
+            'use strict';
+
+            var app = angular.module('formApp', ['ionic']);
+
+            app.controller('formCtrl', function($scope) {
+                $scope.items = [
+                    {
+                        text: 'HTML5',
+                        checked: false
+                    }, {
+                        text: 'CSS3',
+                        checked: true
+                    }, {
+                        text: 'JavaScript',
+                        checked: false
+                    }
+                ];
+            });
+        }());
+    </script>
+</body>
+</html>

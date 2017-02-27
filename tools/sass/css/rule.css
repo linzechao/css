@@ -1,0 +1,22 @@
+@import url(../css/basic.css);
+.main {
+  width: 300px;
+}
+.main a {
+  color: #FFFFFF;
+}
+@media screen and (orientation: landscape) {
+  .main {
+    width: 500px;
+  }
+}
+
+#main header nav {
+  color: #000;
+}
+h1 {
+  color: #fff;
+  background-color: #000;
+}
+
+/*# sourceMappingURL=rule.css.map */

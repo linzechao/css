@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans" ng-app="gridApp">
+<head>
+    <meta charset="utf-8">
+    <title>Grid Style.</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link href="../bower_components/ionic/release/css/ionic.min.css" rel="stylesheet">
+    <style>
+        .col {
+            border: 1px solid #000;
+            border-left: 0;
+            text-align: center;
+        }
+
+        .col:first-child {
+            border-left: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <ion-content>
+        <div class="row row-center">
+            <div class="col col-offset-10">1</div>
+            <div class="col col-50">2</div>
+            <div class="col">3<br>4</div>
+        </div>
+
+        <hr>
+
+        <!--
+            responsive-sm
+            responsive-md
+            responsive-lg
+        -->
+        <div class="row responsive-sm">
+            <div class="col">2</div>
+            <div class="col col-50">4</div>
+            <div class="col">6</div>
+        </div>
+    </ion-content>
+
+    <script src="../bower_components/ionic/release/js/ionic.bundle.js"></script>
+    <script>
+        (function() {
+            'use strict';
+            angular.module('gridApp', ['ionic']);
+        }());
+    </script>
+</body>
+</html>

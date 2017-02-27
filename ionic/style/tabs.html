@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans" ng-app="tabsApp">
+<head>
+    <meta charset="utf-8">
+    <title>Tabs Style.</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link href="../bower_components/ionic/release/css/ionic.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="tabs tabs-calm">
+        <a class="tab-item" href="javascript:;">Home</a>
+        <a class="tab-item" href="javascript:;">Favorites</a>
+        <a class="tab-item" href="javascript:;">Settings</a>
+    </div>
+
+    <div class="tabs tabs-icon-only tabs-assertive">
+        <a class="tab-item" href="javascript:;">
+            <i class="icon ion-home"></i>
+        </a>
+        <a class="tab-item" href="javascript:;">
+            <i class="icon ion-star"></i>
+        </a>
+        <a class="tab-item" href="javascript:;">
+            <i class="icon ion-gear-a"></i>
+        </a>
+    </div>
+
+    <div class="tabs tabs-icon-top tabs-balanced">
+        <a class="tab-item" href="javascript:;">
+            <i class="icon ion-home"></i>
+            Home
+        </a>
+        <a class="tab-item" href="javascript:;">
+            <i class="icon ion-star"></i>
+            Favorites
+        </a>
+        <a class="tab-item" href="javascript:;">
+            <i class="icon ion-gear-a"></i>
+            Settings
+        </a>
+    </div>
+
+    <div class="tabs tabs-icon-left tabs-dark">
+        <a class="tab-item" href="javascript:;">
+            <i class="icon ion-home"></i>
+            Home
+        </a>
+        <a class="tab-item" href="javascript:;">
+            <i class="icon ion-star"></i>
+            Favorites
+        </a>
+        <a class="tab-item" href="javascript:;">
+            <i class="icon ion-gear-a"></i>
+            Settings
+        </a>
+    </div>
+
+    <div class="tabs-striped tabs-top tabs-background-positive tabs-color-calm">
+        <div class="tabs">
+            <a class="tab-item active" href="javascript:;">
+                <i class="icon ion-home"></i>
+                Test
+            </a>
+
+            <a class="tab-item" href="javascript:;">
+                <i class="icon ion-star"></i>
+                Favorites
+            </a>
+
+            <a class="tab-item" href="javascript:;">
+                <i class="icon ion-gear-a"></i>
+                Settings
+            </a>
+        </div>
+    </div>
+    
+    <script src="../bower_components/ionic/release/js/ionic.bundle.js"></script>
+    <script>
+        (function() {
+            'use strict';
+            angular.module('tabsApp', ['ionic']);
+        }());
+    </script>
+</body>
+</html>

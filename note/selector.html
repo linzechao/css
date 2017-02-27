@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Selector</title>
+	<style>
+		.oo > li {background-color: #66ff00;}
+
+		/* 渐变 */
+		.oo {
+			background: -webkit-linear-gradient(#f7f7f7, #fefefe, #fff);
+			background: -o-linear-gradient(#f7f7f7, #fefefe, #fff);
+			background: -moz-linear-gradient(#f7f7f7, #fefefe, #fff);
+			background: linear-gradient(#f7f7f7, #fefefe, #fff);
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li class="oo">ul li
+			<ol>
+				<li>ol li</li>
+				<li>ol li</li>
+			</ol>
+		</li>
+		<li>ul li</li>
+		<li>ul li</li>
+	</ul>
+</body>
+</html>

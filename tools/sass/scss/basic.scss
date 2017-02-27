@@ -1,0 +1,80 @@
+// !default: 在其上面再次声明定义的变量可以覆盖掉默认值
+$a: #888;
+$a: #444 !default;
+
+// 用来继承的样式
+// 会单独生成一个样式存在
+/*.font {
+    font-family: 'Microsoft YaHei', '微软雅黑';
+    font-size: 30px;
+}*/
+
+// 占位符
+// 没使用的时候不会产生样式
+%font {
+    font-family: 'Microsoft YaHei', '微软雅黑';
+    font-size: 30px;   
+}
+
+@mixin border-radius($radius: 4px) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+
+a {
+    @extend %font;
+
+    &:link {
+        color: $a;
+    }
+
+    &:hover {
+        // !global: 只影响定义之后的样式变量
+        $a: #222 !global;
+        color: $a;
+    }
+}
+
+body {
+    color: $a;
+    background-color: #bbb;
+}
+
+// 插值
+$site: top right bottom left;
+$color: #f00 #0f0 #00f #000;
+
+@mixin set-border($param...) {
+    @each $st in $site {
+        border-#{$st}: $param;
+    }
+}
+
+ul {
+    @extend %font;
+
+    list-style-type: none;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #fff;
+
+    li {
+        display: inline-block;
+        width: 100px;
+        @include border-radius(11px);
+
+        // 属性嵌套
+        /* border: {
+            top: 4px solid #f00;
+            right: 4px solid #0f0;
+            bottom: 4px solid #00f;
+            left: 4px solid #000;
+        } */
+
+        @include set-border(10px solid #000);
+    }
+}
+

@@ -1,0 +1,52 @@
+.unquote {
+  content: Hello Sass!;
+}
+
+.quote {
+  content: "Hello Sass!";
+}
+
+.upper {
+  content: ABCD;
+}
+
+.lower {
+  content: zyxw;
+}
+
+.munber {
+  top: 50px;
+  z-index: 10;
+  width: 20%;
+  height: 15px;
+  margin-top: 10px;
+  margin-right: 10px;
+  padding-bottom: 1px;
+  padding-left: 20px;
+}
+
+.list {
+  width: 400px;
+  content: "zhen";
+  z-index: 2;
+  border: 1px solid 3px;
+  text-shadow: 1px, 1px, 1px, #000;
+  text-shadow: 1px 2px 0.1px #f00, 2px 4px 0.2px #0f0, 4px 8px 0.3px #00f;
+}
+
+.typeof {
+  content: "number";
+  content: "super";
+  content: true;
+  content: false;
+  content: "false";
+}
+
+.map {
+  content: Man;
+  font-family: name, sex;
+  box-shadow: Super, Man;
+  content: false;
+}
+
+/*# sourceMappingURL=function.css.map */

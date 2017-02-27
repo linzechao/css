@@ -1,0 +1,111 @@
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.for-through-1 {
+  width: 10px;
+}
+
+.for-through-2 {
+  width: 20px;
+}
+
+.for-through-3 {
+  width: 30px;
+}
+
+.for-through-4 {
+  width: 40px;
+}
+
+.for-to-1, .for-to-2, .for-to-3, .for-to-4, .for-to-5, .for-to-6, .for-to-7, .for-to-8, .for-to-9, .for-to-10, .for-to-11, .for-to-12 {
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.for-to-1 {
+  width: 10px;
+}
+
+.for-to-2 {
+  width: 40px;
+}
+
+.for-to-3 {
+  width: 70px;
+}
+
+.for-to-4 {
+  width: 100px;
+}
+
+.for-to-5 {
+  width: 130px;
+}
+
+.for-to-6 {
+  width: 160px;
+}
+
+.for-to-7 {
+  width: 190px;
+}
+
+.for-to-8 {
+  width: 220px;
+}
+
+.for-to-9 {
+  width: 250px;
+}
+
+.for-to-10 {
+  width: 280px;
+}
+
+.for-to-11 {
+  width: 310px;
+}
+
+.for-to-12 {
+  width: 340px;
+}
+
+.while-4 {
+  width: 14px;
+}
+
+.while-3 {
+  width: 13px;
+}
+
+.while-2 {
+  width: 12px;
+}
+
+.while-1 {
+  width: 11px;
+}
+
+.each-admin {
+  background-image: url("../images/admin.png") no-repeat;
+}
+
+.each-user {
+  background-image: url("../images/user.png") no-repeat;
+}
+
+.each-as {
+  background-image: url("../images/as.png") no-repeat;
+}
+
+.each-root {
+  background-image: url("../images/root.png") no-repeat;
+}
+
+/*# sourceMappingURL=expert.css.map */

@@ -1,0 +1,119 @@
+@charset "utf-8";
+.pa {
+  position: absolute;
+}
+.pr {
+  position: relative;
+}
+.pf {
+  position: fixed;
+}
+.fl {
+  float: left;
+  display: inline;
+}
+.fr {
+  float: right;
+  display: inline;
+}
+.di {
+  display: inline;
+}
+.db {
+  display: block;
+}
+.dn {
+  display: none;
+}
+.dt {
+  display: table;
+}
+.dib {
+  display: inline-block;
+}
+.mc {
+  margin-left: auto;
+  margin-right: auto;
+}
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  border: 0;
+}
+/*被编译的注释*/
+.main {
+  width: 1188px;
+  margin: 10px auto;
+  border: 1px solid #cccccc;
+  border: 10px solid #000000;
+  border: 20px solid #0000ff;
+  border-radius: 10px;
+}
+.border {
+  border: 1px solid #cccccc;
+}
+.triangle {
+  border-width: 1px;
+  border-color: #00f transparent transparent transparent ;
+  border-style: solid dashed dashed dashed;
+  width: 10px;
+  height: 10px;
+  background: #f00;
+  overflow: hidden;
+}
+.position {
+  position: absolute;
+}
+ol {
+  width: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+ol li {
+  padding: 0 20px;
+  background: #abcdef;
+  list-style: none;
+  height: 30px;
+  line-height: 30px;
+  border: 2px dashed #0000ff;
+}
+ol a {
+  float: left;
+}
+ol a:hover {
+  color: #f00;
+}
+ol span {
+  float: right;
+}
+.testArguments {
+  border: 2px dashed #0000ff;
+}
+.compile {
+  border: 1px solid #bbbbbb;
+  width: calc(100%-30px);
+}
+.compile {
+  border: 1px solid #bbbbbb !important;
+}
+.bgimg {
+  height: 400px;
+  background: #000000 '../img/1.jpg' center center no-repeat;
+}

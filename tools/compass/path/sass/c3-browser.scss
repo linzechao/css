@@ -1,0 +1,43 @@
+@import "compass/css3";
+
+// 配置支持哪些浏览器
+// 可写可不写
+@import "compass/support";
+
+// 打印控制台日志
+// @debug browsers();
+
+// 支持以下浏览器
+$supported-browsers: chrome ie;
+
+// 支持浏览器版本
+$browser-minimum-versions: ("ie": "8");
+
+
+ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    list-style: none;
+
+    li {
+        @include inline-block();
+        width: 40px;
+        height: 20px;
+        line-height: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        border: 1px solid #69f;
+        @include border-radius(4px);
+        font-size: 10px;
+        color: #96f;
+
+        // 看起来像button
+        @include appearance("button");
+
+        &:hover {
+            @include box-shadow(1px 1px 1px #f69);
+            @include opacity(.5);
+        }
+    }
+}

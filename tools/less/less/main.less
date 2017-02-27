@@ -1,0 +1,125 @@
+@charset "utf-8";
+
+//@import (less) "main.css";// 导入css文件
+
+@import "reset";
+
+.reset();
+/*被编译的注释*/
+//不被编译的注释
+@mainWidth:990px;
+@publicBorder:1px solid #ccc;
+@objectCenter:10px auto;
+.main {
+  width:@mainWidth * 1.2;
+  margin:@objectCenter;
+  .border;// 混合
+  .borderParam(10px);// 混合带参数
+  .borderParamHaveValue();// 混合带参数
+  border-radius:10px;
+}
+// 混合
+.border {border:@publicBorder;}
+// 混合（可带参数）
+.borderParam(@borPar) {
+  border:@borPar solid #000;
+}
+// 混合（可带参数，有默认值）
+.borderParamHaveValue(@borPar:20px, @color:#00f) {
+  border:@borPar solid @color;
+}
+
+
+
+
+
+
+// 匹配
+.triangle(top, @w:200px, @c:#00f) {
+  border-width:@w;
+  border-color:transparent transparent @c transparent;
+  border-style:dashed dashed solid dashed;
+}
+.triangle(right, @w:200px, @c:#00f) {
+  border-width:@w;
+  border-color:transparent transparent transparent @c;
+  border-style:dashed dashed dashed solid;
+}
+.triangle(bottom, @w:200px, @c:#00f) {
+  border-width:@w;
+  border-color:@c transparent transparent transparent;
+  border-style:solid dashed dashed dashed;
+}
+.triangle(left, @w:200px, @c:#00f) {
+  border-width:@w;
+  border-color:transparent @c transparent transparent;
+  border-style:dashed solid dashed dashed;
+}
+.triangle(@_, @w:200px, @c:#00f) {
+  width:0;
+  height:0;
+  overflow:hidden;
+}
+// 正三角
+.triangle {
+  .triangle(bottom);
+}
+// 匹配模式
+.position(r) {position:relative;}
+.position(f) {position:fixed;}
+.position(a) {position:absolute;}
+.position {.position(a);}
+
+
+
+
+
+// 嵌套
+ol {
+  width:400px;
+  margin:0 auto;
+  overflow:hidden;
+
+  li {
+    padding:0 20px;
+    background:#abcdef;
+    list-style:none;
+    height:30px;
+    line-height:30px;
+    .testArguments;
+  }
+
+  a {float:left;
+    &:hover {color:#f00;}
+  }
+
+  span {float:right}
+}
+
+
+
+// @arguments
+.borderArguments(@w:1px, @s:solid, @c:#bbb) {
+  border:@arguments;
+}
+.testArguments {
+  .borderArguments(2px,dashed,#00f);
+}
+
+
+
+
+
+
+// 避免编译
+.compile {
+  .borderArguments;
+  width:~'calc(100%-30px)';
+}
+
+// !important
+.compile {
+  .borderArguments !important;// 避免使用，底层程序
+}
+
+.bgimg {.h(400px);.bgi(#000, '../img/1.jpg')}

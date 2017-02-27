@@ -1,0 +1,111 @@
+// 函数
+
+// 字符串函数(参数为特殊字符时需要加上引号)
+// 删除字符串两边引号
+.unquote {
+    content: unquote('Hello Sass!');
+}
+
+// 添加字符串引号
+.quote {
+    content: quote('Hello Sass!');
+}
+
+// 大写
+.upper {
+    content: to-upper-case(abcd);
+}
+
+// 小写
+.lower {
+    content: to-lower-case(ZYXW);
+}
+
+// 数字函数
+.munber {
+    // 绝对值
+    top: abs(-50px);
+    // 随机
+    z-index: floor(random() * 11) * 10;
+    // 转换成百分比(不能带单位，0~1之间)
+    width: percentage(.2);
+    // 小数位四舍五入法
+    height: round(14.5px);
+    // 往上取整
+    margin-top: ceil(9.01px);
+    // 往下取整
+    margin-right: floor(10.99px);
+    // 最小值(单位要统一)
+    padding-bottom: min(10px, 20px, 5px, 1px);
+    // 最大值(单位要统一)
+    padding-left: max(10px, 20px, 5px, 1px);
+}
+
+// 列表函数
+$map: xiaoming zhen gailun super;
+$list: admin user as root;
+
+.list {
+    // 长度(用括号括起来的算1个)
+    width: length($map) * 100px;
+    // 通过下标获取元素，从1开始
+    content: quote(nth($map, 2));
+    // 获取下标
+    z-index: index($map, zhen);
+    // 组合(使用空格连接)
+    border: join(1px solid, 3px);
+    // 添加(使用逗号连接)
+    // 如果列表只有一个列表项时，那么插入进来的值将和原来的值会以空格的方式分隔。
+    // 如果列表中列表项是以空格分隔列表项，那么插入进来的列表项也将以空格分隔；
+    // 如果列表中列表项是以逗号分隔列表项，那么插入进来的列表项也将以逗号分隔。
+    text-shadow: append((1px, 1px, 1px), #000);
+    // 压榨
+    text-shadow: zip(1px 2px 4px, 2px 4px 8px, .1px .2px .3px, #f00 #0f0 #00f);
+}
+
+.typeof {
+    $type: number string bool color;
+
+    // 判断类型
+    content: quote(type-of(1));
+    // 返回单位
+    content: quote(unit(1super));
+    // 是否带单位
+    content: unitless(10);
+    // 是否可以运算
+    content: comparable(1px, 2em);
+    // 三元运算符
+    content: if(null, 'ture', 'false');
+}
+
+
+// map操作
+$map: (
+    name: Super,
+    age: 18
+);
+
+$new: (
+    sex: Man
+);
+
+// 组合map
+$merge: map-merge($map, $new);
+// 删除
+$merge: map-remove($merge, age);
+
+// 返回key
+$key: map-keys($merge);
+// 返回value
+$value: map-values($merge);
+
+// 判断是否有这个键与值
+
+// map函数
+.map {
+    // 获取值
+    content: map-get($merge, sex);
+    font-family: $key;
+    box-shadow: $value;
+    content: map-has-key($merge, age);
+}

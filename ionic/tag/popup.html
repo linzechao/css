@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans" ng-app="popupApp">
+<head>
+    <meta charset="utf-8">
+    <title>Popup Demo.</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link rel="stylesheet" href="../bower_components/ionic/release/css/ionic.min.css">  
+</head>
+<body ng-controller="popupCtrl">
+    <ion-content padding="10">
+        <button class="button button-dark" type="button" ng-click="showPopup()">弹弹弹</button>
+    </ion-content>
+
+    <script src="../bower_components/ionic/release/js/ionic.bundle.js"></script>
+    <script>
+        (function() {
+            'use strict';
+
+            var app = angular.module('popupApp', ['ionic']);
+
+            app.controller('popupCtrl', function($scope, $ionicPopup, $timeout) {
+                $scope.showPopup = function() {
+                    $scope.data = {};
+
+                    var myPopup = $ionicPopup.show({
+                        template: '<input type="password" ng-model="data.wifi">',
+                        title: 'Enter Wi-Fi Password',
+                        subTitle: 'Please use normal things',
+                        scope: $scope,
+                        buttons: [
+                            {
+                                text: 'Cancel',
+                                onTap: function() {
+                                    return '×';
+                                }
+                            },
+                            {
+                                text: '<b>Save</b>',
+                                type: 'button-positive',
+                                onTap: function(e) {
+                                    if (!$scope.data.wifi) {
+                                        $scope.showConfirm();
+                                        e.preventDefault();
+                                    } else {
+                                        $scope.showAlter();
+                                        return $scope.data.wifi;
+                                    }
+                                }
+                            }
+                        ]
+                    });
+
+                    // 对话框监听
+                    myPopup.then(function(res) {
+                        console.log('Tapped：', res);
+                    });
+
+                    // 延时关闭对话框
+                    $timeout(function() {
+                        // myPopup.close();
+                    }, 3000);
+
+                    // 确认对话框
+                    $scope.showConfirm = function() {
+                        var confirmPopup = $ionicPopup.confirm({
+                            title: 'Consume Ice Cream',
+                            template: 'Are you sure you want to eat this ice cream?'
+                        });
+
+                        confirmPopup.then(function(res) {
+                            console.log(res ? 'You are sure' : 'You are not sure');
+                        });
+                    };
+
+                    // 提示框
+                    $scope.showAlter = function() {
+                        var alertPopup = $ionicPopup.alert({
+                            title: 'Don\'t eat that!',
+                            template: 'It might taste good'
+                        });
+
+                        alertPopup.then(function(res) {
+                            console.log('Thank you for not eating my delicious ice cream cone');
+                        });
+                    };
+
+                };
+            });
+        }());
+    </script>
+</body>
+</html>

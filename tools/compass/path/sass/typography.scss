@@ -1,0 +1,123 @@
+@import "compass/reset";
+// @import "compass/typography";
+
+/*
+ * 包含以下4个模块
+ * 1、compass/typography/links
+ * 2、compass/typography/lists
+ * 3、compass/typography/text
+ * 4、compass/typography/vertical-rhythm
+ **/
+
+@import "compass/typography/links";
+
+a {
+    // 添加hover样式
+    // @include hover-link();
+
+    // 默认样式
+    // link，hover，active，visited，focus
+    // 第一个为必须样式
+    // @include link-colors(#f00, #0f0, #00f, #000, #fff);
+
+    @include unstyled-link();
+}
+
+@import "compass/typography/lists";
+
+ol {
+    // @include no-bullets();
+    // @include inline-list();
+    // 使用此方法，解决高度问题
+    // @include horizontal-list(0, right);
+    // @include horizontal-list(false);
+    @include inline-block-list(7px);
+
+    li:nth-child(2) {
+        @include no-bullet();
+    }
+}
+
+@import "compass/typography/text";
+
+div {
+    // 强制换行
+    @include force-wrap();
+
+    // 不换行
+    @include nowrap();
+    @include ellipsis();
+
+    // 字符边距调大方式隐藏
+    // @include hide-text();
+    // 字符透明度，字体0化方式隐藏
+    // @include squish-text();
+
+    // 背景图片
+    // @include replace-text(URL);
+    // 自动计算图片宽高
+    // @include replace-text-with-dimensions(URL);
+}
+
+@import "compass/typography/vertical_rhythm";
+$base-font-size: 16px;
+$base-line-height: 24px;
+// 初始化HTML的字体和行高
+@include establish-baseline();
+
+p {
+    // 添加基准线
+    @include debug-vertical-alignment();
+}
+
+h1 {
+    // 48 / 16 = 3
+    // font-size: 3em;
+    // line-height: 1.5em;
+    // 结果与上面一致
+    @include adjust-font-size-to(48px);
+}
+
+h2 {
+    // 36 / 16 = 2.25
+    // font-size: 2.25em;
+    // line-height: 1.3333em;
+    @include adjust-font-size-to(36px);
+}
+
+h3 {
+    // 24 / 16 = 1.5
+    // font-size: 1.5em;
+    // line-height: 2em;
+    @include adjust-font-size-to(24px);
+}
+
+h4 {
+    // 21 / 16 = 3
+    // font-size: 1.3125em;
+    // line-height: 2.2857em;
+    @include adjust-font-size-to(21px);
+}
+
+h5 {
+    // 18 / 16 = 1.125
+    // font-size: 1.125em;
+    // line-height: 1.3333em;
+    @include adjust-font-size-to(18px);
+}
+
+h6 {
+    // 16 / 16 = 1
+    // font-size: 1em;
+    // line-height: 1.5em;
+    @include adjust-font-size-to(16px);
+}
+
+p {
+    @include adjust-font-size-to(16px);
+    // 自动计算上边距并加上
+    @include leader();
+    // 自动计算下边距并加上
+    @include trailer();
+    // margin: 1.5em 0;
+}

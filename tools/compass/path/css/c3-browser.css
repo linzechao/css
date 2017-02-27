@@ -1,0 +1,31 @@
+ul {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  list-style: none;
+}
+ul li {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  width: 40px;
+  height: 20px;
+  line-height: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 1px solid #69f;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  font-size: 10px;
+  color: #96f;
+  -moz-appearance: button;
+  -webkit-appearance: button;
+}
+ul li:hover {
+  -webkit-box-shadow: 1px 1px 1px #f69;
+  box-shadow: 1px 1px 1px #f69;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
