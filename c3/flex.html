@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flex</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #f4f3f3;
+    }
+
+    .container {
+      display: flex;
+      display: none;
+      background-color: #dfdfdf;
+      color: #bfd8d5;
+
+      /* 显示方向 */
+      /* 默认从左到右 */
+      flex-direction: row;
+      /*
+      flex-direction: row-reverse;
+      flex-direction: column;
+      flex-direction: column-reverse;
+      */
+
+      /* 换行规则 */
+      /* 默认打死也不换行 */
+      /*
+      flex-wrap: nowrap;
+      flex-wrap: wrap;
+      */
+      flex-wrap: wrap-reverse;
+
+      /* 换行与方向 */
+      /* flex-flow: row nowrap; */
+
+      /* 对其方式 */
+      /* 默认从左到右 */
+      justify-content: flex-start;
+      justify-content: flex-end;
+      justify-content: center;
+      justify-content: space-between;
+      justify-content: space-around;
+
+      /* 垂直对齐 */
+      /* 默认顶部
+      align-items: flex-start;
+      align-items: flex-end;
+      */
+      align-items: center;
+      /*
+      align-items: stretch;
+      align-items: baseline;
+      */
+
+      /* 多行的对齐方式 */
+      /*
+      align-content: flex-start;
+      align-content: flex-end;
+      */
+      align-content: center;
+      /*
+      align-content: space-between;
+      align-content: space-around;
+      align-content: stretch;
+      */
+    }
+
+    .item {
+      width: 20%;
+      margin: 20px;
+
+      font-size: 20px;
+      font-weight: bold;
+      background-color: #bfd8d5;
+      color: #b1bed5;
+      text-align: center;
+      border: 1px solid #b1bed5;
+
+      /*
+      order: 1;
+      flex-grow: 1;
+      flex-shrink: 2;
+      */
+      flex-grow: 1;
+    }
+
+    .item:nth-child(4) {
+      /* 默认 0
+      order: -1;
+      */
+
+      /* 默认 0
+      flex-grow: 2;
+      */
+
+      /* 默认 1
+      flex-shrink: 4;
+      */
+    }
+
+    .item:nth-child(odd) {
+      flex-grow: 2;
+    }
+
+    .box {
+      display: flex;
+      display: none;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      padding-top: 10px;
+      background-color: #dfdfdf;
+    }
+
+    .child {
+      width: 25%;
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      
+      flex-grow: 1;
+
+      background-color: #bfd8d5;
+      color: #b1bed5;
+      text-align: center;
+    }
+
+    .child:first-child {
+      width: 50%;
+      flex-grow: 2;
+      align-self: flex-end;
+    }
+
+    /* ======== */
+    .flex {
+      display: flex;
+      width: 600px;
+    }
+
+    .flex-item:first-child {
+      flex: 1 1 30%;
+      background-color: #34699a;
+    }
+    .flex-item:nth-child(2) {
+      flex: 1 1 200px;
+      background-color: #408ab4;
+    }
+    .flex-item:last-child {
+      flex: 1 1 auto;
+      background-color: #65c6c4;
+    }
+
+    /* ======== */
+    .checkerboard {
+      display: flex;
+      margin: 10px auto;
+
+      width: 400px;
+      height: 400px;
+      background-color: #65c6c4;
+    }
+
+    .chessman {
+      width: 33.33%;
+      height: 33.33%;
+      border-radius: 50%;
+      background-color: #113f67;
+    }
+
+    .c11 {}
+    /* 默认样式 */
+
+    .c12 {
+      justify-content: center;
+    }
+
+    .c13 {
+      justify-content: flex-end;
+    }
+
+    .c14 {
+      justify-content: space-between;
+    }
+
+    .c15 {
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    .c16 {}
+    .c16 > .chessman:nth-child(2) {
+      align-self: center;
+    }
+    .c16 > .chessman:last-child {
+      align-self: flex-end;
+    }
+
+    /* ======== */
+    .c17 {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .c17 > .chessman:nth-child(2) {
+      margin-top: 33.33%;
+    }
+    /* ======== */
+
+    .c21 {
+      align-items: center;
+    }
+
+    .c22 {
+      justify-content: center;
+      align-items: center;
+    }
+
+    .c23 {
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .c24 {
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .c25 {
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    /* ======== */
+    .c26 {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .c26 > .chessman {
+      width: 34%;
+    }
+    .c26 > .chessman:nth-child(3),
+    .c26 > .chessman:last-child {
+      align-self: flex-end;
+    }
+    /* ======== */
+
+    .c27 {
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .c27 .chessman:nth-child(4),
+    .c27 .chessman:nth-child(5),
+    .c27 .chessman:nth-child(6) {
+      align-self: flex-end;
+    }
+
+    .c31 {
+      align-items: flex-end;
+    }
+
+    .c32 {
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    .c33 {
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+    .c34 {}
+    .c34 >.chessman:nth-child(2) {
+      align-self: center;
+    }
+
+    .c35 {
+      flex-direction: column;
+    }
+    .c35 >.chessman:nth-child(2) {
+      align-self: flex-end;
+    }
+
+    .c36 {
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .c36 >.chessman:nth-child(2) {
+      align-self: flex-end;
+    }
+
+    /* ======== */
+    .c37 {
+      flex-wrap: wrap;
+    }
+    .c37 >.chessman:nth-child(2) {
+      margin-top: 33.33%;
+    }
+    /* ======== */
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+  </div>
+
+  <div class="box">
+    <div class="child">1</div>
+    <div class="child">2</div>
+    <div class="child">3</div>
+    <div class="child">4</div>
+    <div class="child">5</div>
+  </div>
+
+  <div class="flex">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+
+  <div class="checkerboard c26">
+    <div class="chessman"></div>
+    <div class="chessman"></div>
+    <div class="chessman"></div>
+    <div class="chessman"></div>
+  </div>
+</body>
+</html>
